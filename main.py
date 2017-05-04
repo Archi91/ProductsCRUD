@@ -21,6 +21,12 @@ def add_product():
 
     return render_template('add_product.html')
 
+@app.route('/products/:<id>/delete/')
+def delete_product(id):
+    Product.delete_product(id)
+    return redirect(url_for('index'))
+
+
 def request_validate(name, price, description):
     validator = True
     if not name:
