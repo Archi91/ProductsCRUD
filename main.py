@@ -18,6 +18,8 @@ def add_product():
         if request_validate(name, price, description):
             Product.add_product(name, price, description)
             return redirect(url_for('index'))
+        else:
+            return render_template('add_product.html', name=name, price=price, description=description)
 
     return render_template('add_product.html')
 
@@ -31,10 +33,13 @@ def request_validate(name, price, description):
     validator = True
     if not name:
         validator = False
+        flash("Product's name is required")
     if not price or float(price) < 0:
         validator = False
+        flash("Product's price is required and must be a positive value")
     if not description:
         validator = False
+        flash("Product's description is required")
     return validator
 
 

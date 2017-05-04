@@ -5,8 +5,8 @@
 {% block content %}
     {% if products %}
         <h1>Products</h1>
-        <a href="{{ url_for('add_product') }}"><button>Add product</button></a>
-        <table border="1">
+        <a href="{{ url_for('add_product') }}" class="addbtn"><button>Add product</button></a>
+        <table>
             <thead>
                 <tr>
                     <th>ID</th>
@@ -16,8 +16,17 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="tablebody">
                 {% for product in products %}
+                    {% if loop.index % 2 == 0 %}
+                    <tr class="coloredrow">
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.price }}</td>
+                        <td><a href="{{ url_for('delete_product', id = product.id) }}">Delete</a></td>
+                    </tr>
+                    {% else %}
                     <tr>
                         <td>{{ product.id }}</td>
                         <td>{{ product.name }}</td>
@@ -25,12 +34,13 @@
                         <td>{{ product.price }}</td>
                         <td><a href="{{ url_for('delete_product', id = product.id) }}">Delete</a></td>
                     </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>
     {% else %}
         <h1>No products found</h1>
-        <a href="{{ url_for('add_product') }}"><button>Add product</button>
+        <a href="{{ url_for('add_product') }}" class="addbtn"><button>Add product</button>
     {% endif %}
 
 {% endblock %}
