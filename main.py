@@ -31,7 +31,7 @@ def request_validate(name, price, description):
     validator = True
     if not name:
         validator = False
-    if not price:
+    if not price or float(price) < 0:
         validator = False
     if not description:
         validator = False
