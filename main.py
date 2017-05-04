@@ -32,6 +32,7 @@ def request_validate(name, price, description):
     return validator
 
 
+
 if __name__ == '__main__':
     app.secret_key = "SECRET_KEY"
     app.run(debug=True, host='0.0.0.0')
