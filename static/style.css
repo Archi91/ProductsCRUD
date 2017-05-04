@@ -1,0 +1,56 @@
+.align {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 60%;
+}
+
+.content table {
+    width: 100%;
+}
+
+.header {
+    display: inline-flex;
+}
+
+.coloredrow {
+    background-color: rgb(234, 242, 211);
+}
+
+.addbtn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+td {
+    text-align: center;
+    color: red;
+}
+
+thead {
+    background-color: rgb(167, 201, 66);
+    color: white;
+}
+
+button {
+    height: 30px;
+    width: 100px;
+    font-size: 80%;
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+}
+
+thead, th {
+    border: 2px solid darkgreen;
+}
+
+tbody, td {
+   border: 2px solid darkred;
+}
+
+table {
+    border-collapse: collapse;
+}
