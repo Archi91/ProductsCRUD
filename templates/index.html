@@ -4,7 +4,7 @@
 {% endblock %}
 {% block content %}
     <h1>Products</h1>
-    <a><button>Add product</button></a>
+    <a href="{{ url_for('add_product') }}"><button>Add product</button></a>
     <table border="1">
         <thead>
             <tr>
